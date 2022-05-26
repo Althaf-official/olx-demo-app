@@ -16,3 +16,5 @@ const firebaseConfig = {
 2 npm i firebase
 
 
+this firebase we will use for authentication,firestore database and storage
+
