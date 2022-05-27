@@ -4,8 +4,8 @@ function App() {
     <div>
       <button onClick={() => {
         // get document
-        firebase.fireStore().collection('users').doc('liam').get().then(data=>{
-          
+        firebase.fireStore().collection('users').doc('IUIXHh63sTjxFE3yqm3l').get().then(data=>{
+
         })
       }}>click me</button>
     </div>
