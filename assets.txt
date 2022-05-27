@@ -14,7 +14,13 @@ const firebaseConfig = {
 };
 
 2 npm i firebase
-
-
 this firebase we will use for authentication,firestore database and storage
 
+3 create a database 
+click on >firestore database>create database
+
+then click on create collection>start collection 
+create dfferent collections .prodcts and documents.
+
+
+4.CRUD operation

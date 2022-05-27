@@ -1,8 +1,8 @@
-
+import {firebase} from './firebase/config'
 function App() {
   return (
     <div>
-      <h1>hello world</h1>
+      <button onClick={}>click me</button>
     </div>
   );
 }
