@@ -4,7 +4,7 @@ function App() {
     <div>
       <button onClick={() => {
         // get document
-        const liam = await db.collection('users').doc('liam').get()
+        const liam = await firebase.fireStore().collection('users').doc('liam').get()
       }}>click me</button>
     </div>
   );
