@@ -1,11 +1,13 @@
-import {firebase} from './firebase/config'
+import { firebase } from './firebase/config'
 function App() {
   return (
     <div>
-      <button onClick={}>click me</button>
+      <button onClick={() => {
+        // get document
+        const liam = await db.collection('users').doc('liam').get()
+      }}>click me</button>
     </div>
   );
 }
 
 export default App;
- 
