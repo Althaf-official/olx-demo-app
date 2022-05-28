@@ -1,4 +1,6 @@
-import firebase from 'firebase'
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore'
 
 
 //https://console.firebase.google.com/project/olx-demo-e1568/settings/general/web:MTc2NTA3YzItZTA3Yi00M2M3LTg2NjMtNDNiYTUyNTdhYjY5
@@ -15,4 +17,4 @@ const firebaseConfig = {
     measurementId: "G-1Y80YRHFS3"
   };
 
- export const Firebase=firebase.initializedApp(firebaseConfig)
+ export const Firebase=firebase.initializeApp(firebaseConfig)

@@ -5,7 +5,6 @@ function App() {
       <button onClick={() => {
         // get document
         Firebase.fireStore().collection('products').get().then(data=>{
-
         })
       }}>click me</button>
     </div>
