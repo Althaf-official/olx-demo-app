@@ -1,11 +1,15 @@
-import { Firebase } from './firebase/config'
+
+import { collection, getDocs } from "firebase/firestore";
+import {db} from './firebase/config'
+
 function App() {
   return (
     <div>
-      <button onClick={() => {
-        // get document
-        Firebase.fireStore().collection('products').get().then(data=>{
-        })
+      <button onClick={async() => {
+       const querySnapshot =await getDocs(collection(db, "products"));
+       querySnapshot.forEach((doc) => {
+         console.log(`${doc.id} => ${doc.data()}`);
+       })
       }}>click me</button>
     </div>
   );

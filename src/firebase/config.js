@@ -1,11 +1,6 @@
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import 'firebase/compat/firestore'
-
-
-//https://console.firebase.google.com/project/olx-demo-e1568/settings/general/web:MTc2NTA3YzItZTA3Yi00M2M3LTg2NjMtNDNiYTUyNTdhYjY5
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-// this code is copied from firebase >project overview >config 
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import App from "../App";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBGG9BL4osat3wRSbcdkR_AkVBR6PzVrgE",
@@ -17,4 +12,5 @@ const firebaseConfig = {
     measurementId: "G-1Y80YRHFS3"
   };
 
- export const Firebase=firebase.initializeApp(firebaseConfig)
+ export const Firebase=initializeApp(firebaseConfig)
+ export const db=getFirestore(App)
