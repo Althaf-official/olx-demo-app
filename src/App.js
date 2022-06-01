@@ -8,7 +8,7 @@ function App() {
       <button onClick={async() => {
        const querySnapshot =await getDocs(collection(db, "products"));
        querySnapshot.forEach((doc) => {
-         console.log(doc.data());
+         console.log(doc.data(),doc.id);
        })
       }}>click me</button>
     </div>
