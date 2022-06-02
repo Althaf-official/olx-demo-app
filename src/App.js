@@ -1,5 +1,5 @@
 
-import { doc,  setDoc } from "firebase/firestore";
+import { collection,  getDocs } from "firebase/firestore";
 import {db} from './firebase/config'
 
 
@@ -7,9 +7,10 @@ function App() {
   return (
     <div>
       <button onClick={async() => {
-      await setDoc(doc(db, "products","qyIgEVxu9qG0eDcUVG2s"), {
-        name: "california"
-      });      
+      const querySnapshot =await getDocs(collection(db, "products"));
+      querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+      })      
       }}>click me</button>
     </div>
   );
