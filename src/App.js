@@ -7,7 +7,9 @@ function App() {
   return (
     <div>
       <button onClick={async() => {
-      await deleteDoc(doc(db, "products","NA9s2cOZCCMVhULJgYmf"));
+      await deleteDoc(doc(db, "products","aiyiW7LjJ3hUmrAKICG8")).then(()=>{
+        console.log('Done')
+      })
       }}>click me</button>
     </div>
   );
