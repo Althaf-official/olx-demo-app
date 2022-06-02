@@ -24,3 +24,6 @@ create dfferent collections .prodcts and documents.
 
 
 4.CRUD operation
+
+5. get data from database  https://firebase.google.com/docs/firestore/query-data/get-data?hl=en&authuser=0#example_data
+
