@@ -1,5 +1,5 @@
 
-import { collection,  addDoc } from "firebase/firestore";
+import { doc,  deleteDoc } from "firebase/firestore";
 import {db} from './firebase/config'
 
 
@@ -7,10 +7,7 @@ function App() {
   return (
     <div>
       <button onClick={async() => {
-      await addDoc(collection(db, "products"), {
-        name: "Los Angeles",
-        price: 14000
-      }); 
+      await deleteDoc(doc(db, "products","NA9s2cOZCCMVhULJgYmf"));
       }}>click me</button>
     </div>
   );
