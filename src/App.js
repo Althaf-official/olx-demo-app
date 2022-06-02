@@ -1,20 +1,35 @@
 
-import { collection,  getDocs } from "firebase/firestore";
-import {db} from './firebase/config'
-
+import { collection, getDocs } from "firebase/firestore";
+import { db } from './firebase/config'
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 function App() {
   return (
     <div>
-      <button onClick={async() => {
-      const querySnapshot =await getDocs(collection(db, "products"));
-      querySnapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data()}`);
-      })      
+      <button onClick={async () => {
+        const auth = getAuth();
+        signInWithEmailAndPassword(auth,'mascreation007@gmail.com', '12345678')
+          .then((userCredential) => {
+            console.log(userCredential)
+            // Signed in 
+            const user = userCredential.user;
+            console.log(user)
+            const querySnapshot =  getDocs(collection(db, "products"));
+            console.log(querySnapshot)
+            querySnapshot.forEach((doc) => {
+              console.log(doc);
+            })
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode,errorMessage)
+          });
       }}>click me</button>
     </div>
   );
 }
+export default App;
 //crud operation completed
 
 // in firestore database anyone can read ,write. now i changed to only authenticated person only can read and write
@@ -27,6 +42,3 @@ function App() {
 //   }
 // }
 
-
-
-export default App;
